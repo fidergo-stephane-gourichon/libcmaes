@@ -29,8 +29,8 @@ Dependencies:
 
 - [eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) for all matrix operations;
 - [glog](https://code.google.com/p/google-glog/) for logging events and debug (optional);
-- [gflags](https://code.google.com/p/gflags/) for command line parsing (optional for your code, needed only to build examples and tests);
-- [gtest](https://code.google.com/p/googletest/) for unit testing (optional for your code, needed only for to build tests);
+- [gflags](https://gflags.github.io/gflags/) for command line parsing (optional for your code, needed only to build examples and tests);
+- [gtest](https://github.com/google/googletest/) for unit testing (optional for your code, needed only for to build tests);
 - [libboost-python](http://www.boost.org/doc/libs/1_56_0/libs/python/doc/) for Python bindings (optional);
 - [numpy](http://www.numpy.org/) for Python bindings (optional).
 
