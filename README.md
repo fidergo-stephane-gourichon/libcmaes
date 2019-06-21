@@ -49,6 +49,10 @@ Beware of dependencies, typically on Debian/Ubuntu Linux, do:
 sudo apt-get install autoconf automake libtool libgoogle-glog-dev libgflags-dev libeigen3-dev
 ```
 
+#### autotools
+
+Google [no longer provides autotools integration](https://github.com/google/googletest/blob/master/googletest/README.md#user-content-legacy-build-scripts), you will need to take care of [gtest](https://github.com/google/googletest) yourself.  We suggest https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/ .
+
 For compiling with basic options enabled:
 ```
 ./autogen.sh
