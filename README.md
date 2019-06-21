@@ -61,7 +61,7 @@ For compiling with CMake:
 ```
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=~/.local/ .
+cmake -DCMAKE_INSTALL_PREFIX=~/.local/ ..
 make -j2
 make install
 ```
