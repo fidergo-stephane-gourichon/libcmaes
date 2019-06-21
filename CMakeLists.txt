@@ -75,6 +75,33 @@ if (USE_OPENMP)
   endif ()
 endif ()
 
+# gflags
+message(STATUS "Looking for gflags")
+  
+## Alternative 1: Find externally installed package (e.g., apt-get, Homebrew, custom)
+#
+# - When gflags/CMakeLists.txt file exists, i.e., the "gflags" Git submodule was
+#   initialized, run "git submodule deinit gflags" to remove the submodule files.
+if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/gflags/CMakeLists.txt")
+
+  message(STATUS "Findgflags: No submodule, looking for gflags via regular CMake facilities.")
+  message(STATUS "If search fails, consider doing this then retry CMake: git submodule update --init")
+  find_package(gflags REQUIRED)
+
+## Alternative 2: Build gflags as part of this project when included as subproject
+#
+# - Download gflags source files using "git submodule update --init gflags".
+# - In your project, gflags source files can also be committed to your own
+#   project's repository using "git subtree add" instead of "git submodule".
+elseif (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/gflags/CMakeLists.txt")
+
+  message(STATUS "Findgflags: Submodule present, using it.")
+  add_subdirectory(gflags)
+
+endif ()
+
+
+
 
 if (CMAKE_VERSION VERSION_LESS 3.1 OR NOT USE_COMPILE_FEATURES)
   check_cxx_compiler_flag ("-std=c++11" SUPPORTS_STDCXX11)
