@@ -61,7 +61,11 @@ echo "#define CMAES_EXPORT" > cmaes_export.h
 make
 ```
 
-For compiling with CMake:
+#### CMake
+
+Just use CMake as for any other project.
+
+For example, assuming you want to install the library "global to your user account" in `~/.local`:
 ```
 mkdir build
 cd build
